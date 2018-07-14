@@ -18,7 +18,7 @@
   <div class='col-md-3'>
   <ul>
     <% @todos.each do |todo| %>
-      <h3 style="color:firebrick;">
+      <h3>
       <li>
         <%= todo.item %>
         <h6><%= link_to "delete", todo, method: :delete %></h6>
