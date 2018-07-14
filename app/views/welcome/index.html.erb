@@ -3,7 +3,6 @@
 <h4>Make a list!</h4>
 <br>
 <br>
-
 <div class='row'>
   <div class='col-md-3'>
   <h4>Type to-do item here</h4>
@@ -15,6 +14,9 @@
   </div>
 
   <div class='col-md-3'>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+  <% end %>
   <ol>
     <% @todos.each do |todo| %>
       <h3>
