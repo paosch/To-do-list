@@ -1,8 +1,12 @@
 class TodosController < ApplicationController
   def create
     @todo = Todo.new(todo_params)
-    @todo.save
-    redirect_to root_path
+    if @todo.save
+      redirect_to root_path
+    else
+      flash[:alert] = "you didn't type anything!"
+      redirect_to root_path
+    end
   end
 
   def destroy
