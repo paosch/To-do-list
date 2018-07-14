@@ -1,24 +1,28 @@
-# README
+# To-do list
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A small program written to practise the flow of a Ruby on Rails app.
+<br>
 
-Things you may want to cover:
+## User stories
+```
+As a busy user,
+so that I can create a list of all the things I have to do,
+I want to be able to add a to-do item.
 
-* Ruby version
+As a user,
+so that I can get organised,
+I want to be able to see my to-do list.
 
-* System dependencies
+As a user,
+to feel I have achieved something today,
+I want to be able to delete a to-do item from the list.
+```
 
-* Configuration
+### How use the app
+- clone this repository
+- ```bundle install```
+- ```rails db:migrate```
+- ```rails server```
+- visit your localhost page
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### User interface
