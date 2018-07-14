@@ -1,27 +1,31 @@
 <html>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHoJGDGMRPRtAQbBhGssJtrPtfImQYSXc7glY3oU_pl_eHKPl61g"><img>
 <h1>Things to do?</h1>
 <h4>Make a list!</h4>
 <br>
 <br>
 
 <div class='row'>
-      <div class='col-md-6'>
-        <ul>
-        <% @todos.each do |todo| %>
-          <h3 style="color:red;">
-          <li><%= todo.item %></li>
-          </h3>
-        <% end %>
-        </ul>
-      </div>
-      <div class='col-md-6'>
-      <h3>Enter to-do item here</h3>
-      <%= form_with scope: :todo, url: todos_path do |f| %>
-        <%= f.text_field :item, placeholder:'eg. buy milk' %><br>
-        <br>
-        <%= f.submit "enter", class:'btn btn-primary' %>
-      <% end %>
-      </div>
+  <div class='col-md-3'>
+  <h4>Type to-do item here</h4>
+  <%= form_with scope: :todo, url: todos_path do |f| %>
+    <%= f.text_field :item, placeholder:'eg. buy milk' %><br>
+    <br>
+    <%= f.submit "add to list", class:'btn btn-primary' %>
+  <% end %>
+  </div>
 
+  <div class='col-md-3'>
+  <ul>
+    <% @todos.each do |todo| %>
+      <h3 style="color:firebrick;">
+      <li>
+        <%= todo.item %>
+        <h6><%= link_to "delete", todo, method: :delete %></h6>
+      </li>
+      </h3>
+    <% end %>
+  </ul>
+  </div>
 </div>
 </html>
